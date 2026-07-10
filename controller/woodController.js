@@ -1,4 +1,4 @@
-const Wood = require("../model/Wood");
+const Wood = require("../model/wood");
 
 // Each function handles one operation. `exports.name` makes it importable.
 exports.createWood = async (req, res) => {
