@@ -6,7 +6,9 @@
 // npm install jsonwebtoken
 
 require("dotenv").config(); // load .env into process.env
+
 const dns = require("dns");
+const cors = require('cors');
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 
@@ -19,7 +21,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 // import the Express library
 const app = express();              // create an app
-
+app.use(cors());
 app.use(express.json()); // <-- parses JSON request bodies into req.body
 // example 1
 app.post("/api/echo", (req, res) => {
